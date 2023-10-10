@@ -1,0 +1,57 @@
+.register-page {
+    display: flex;
+    justify-content: center;
+}
+
+.inner-register {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.register-title {
+    width: 100%;
+    text-align: center;
+}
+
+.text {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.register-form {
+    width: 100%;
+    border: 1px solid black;
+    padding: 40px 30px 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #232323a6;
+}
+
+.button-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    padding: 10px;
+    background-color: #00C29F;
+    border-radius: 5px;
+    border: 1px solid #232323a6;
+}
+
+.button-register {
+    margin-top: 10px;
+    width: 30%;
+    color: azure;
+    font-weight: 700;
+    margin: 20px 0;
+}

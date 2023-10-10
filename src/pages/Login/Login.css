@@ -1,0 +1,113 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+}
+
+.inner-login {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.login-title {
+    width: 100%;
+    text-align: center;
+}
+
+.text {
+    margin-top: -10px;
+}
+
+.login-form {
+    width: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px 20px 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 0px 3px #2323231f;
+}
+
+.input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #232323a6;
+}
+
+.input1 {
+    width: 48%;
+}
+
+.input2 {
+    width: 100%;
+}
+
+/* .radio {
+    font-size: 16px;
+    text-transform: capitalize;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.radio + .radio {
+    margin-left: 30px;
+}
+
+.radio input[type="radio"] {
+    display: none;
+}
+
+.radio span {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 3px solid #00aeef;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0px;
+}
+
+.radio span::after {
+    content: "";
+    height: 8px;
+    width: 8px;
+    background-color: #00aeef;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    transition: 300ms ease-in-out 0s;
+}
+
+.radio input[type="radio"]:checked ~ span::after {
+    transform: translate(-50%, -50%) scale(1);
+} */
+
+.button-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    padding: 10px;
+    background-color: #00C29F;
+    border-radius: 5px;
+    border: 1px solid #232323a6;
+}
+
+.button-login {
+    margin-top: 10px;
+    width: 25%;
+    color: azure;
+    font-weight: 700;
+    margin: 20px 0;
+}
