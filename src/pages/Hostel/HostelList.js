@@ -2,12 +2,15 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "../../components/SearchBar";
 import { getHostel, postHostelSearch } from "../../services/hostelServices";
-import { Flex, Col, Row } from "antd";
+import { Flex, Col, Row, Button } from "antd";
 import "./Hostel.css";
 
 function Hostelhostel() {
   const [data, setData] = useState([]);
   const [isHovered, setIsHovered] = useState(false);
+  const [displayedHostels, setDisplayedHostels] = useState([]);
+  const [showMore, setShowMore] = useState(false);
+  const initialDisplayCount = 30;
 
   const handleHover = () => {
     if (isHovered === true) setIsHovered(false);
@@ -18,6 +21,7 @@ function Hostelhostel() {
     }
   };
 
+  //lấy ds trọ
   useEffect(() => {
     const fetchApi = async () => {
       const result = await getHostel();
@@ -28,22 +32,36 @@ function Hostelhostel() {
     fetchApi();
   }, []);
 
+  useEffect(() => {
+    setDisplayedHostels(data.slice(0, initialDisplayCount));
+  }, [data]);
+
+  const handleShowMore = () => {
+    const currentCount = displayedHostels.length;
+    const nextDisplay = data.slice(
+      currentCount,
+      currentCount + initialDisplayCount
+    );
+    setDisplayedHostels([...displayedHostels, ...nextDisplay]);
+    setShowMore(true);
+  };
+
   const handleSearch = (formData) => {
-    console.log(formData)
+    console.log(formData);
     const title = formData.Title[0];
     const city = formData.City[0];
-    const minprice = Number(formData.MinPrice[0])
-    const maxprice = Number(formData.MaxPrice[0])
+    const minprice = Number(formData.MinPrice[0]);
+    const maxprice = Number(formData.MaxPrice[0]);
     const option = {
       title: title,
       address: city,
       minprice: minprice,
-      maxprice: maxprice
-    }
+      maxprice: maxprice,
+    };
     const fetchApi = async () => {
       const result = await postHostelSearch(option);
       if (result) {
-        setData(result)
+        setData(result);
       }
     };
     fetchApi();
@@ -65,7 +83,7 @@ function Hostelhostel() {
                     <>
                       <ul className="hostel">
                         <Row gutter={24}>
-                          {data.map((item) => (
+                          {displayedHostels.map((item) => (
                             <Col
                               className="gutter-row"
                               xl={{ span: 6 }}
@@ -122,6 +140,9 @@ function Hostelhostel() {
                           ))}
                         </Row>
                       </ul>
+                      {!showMore && (
+                        <Button onClick={handleShowMore}>Hiển thị thêm</Button>
+                      )}
                     </>
                   )}
                 </div>
