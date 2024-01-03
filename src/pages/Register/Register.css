@@ -1,10 +1,11 @@
 .register-page {
-    display: flex;
-    justify-content: center;
+    width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .inner-register {
-    width: 30%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -12,20 +13,38 @@
 .register-title {
     width: 100%;
     text-align: center;
+    margin-top: 100px;
 }
 
 .text {
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: -10px;
+}
+
+.register-page-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.register-image {
+    width: 400px;
+    height: auto;
+}
+
+.register-image img {
+    width: 100%;
+    height: auto;
 }
 
 .register-form {
-    width: 100%;
+    width: 38%;
     border: 1px solid black;
-    padding: 40px 30px 10px 30px;
+    border-radius: 10px;
+    padding: 20px 20px 10px 20px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    box-shadow: 0px 0px 0px 3px #2323231f;
 }
 
 .input {
@@ -33,6 +52,7 @@
     margin-bottom: 15px;
     border-radius: 5px;
     border: 1px solid #232323a6;
+    width: 100%;
 }
 
 .button-form {
@@ -50,7 +70,7 @@
 
 .button-register {
     margin-top: 10px;
-    width: 30%;
+    width: 25%;
     color: azure;
     font-weight: 700;
     margin: 20px 0;

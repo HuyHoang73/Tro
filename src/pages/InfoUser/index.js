@@ -1,26 +1,27 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import MenuUser from "../../components/MenuUser";
+import "./InfoUser.css";
 
 function InfoUser() {
-    return(
-        <>
-            <div>InfoUser</div>
-            <div className="user-navbar">
-                <ul>
-                    <li><Link to="./">Thông tin cá nhân</Link></li>
-                    <li><Link to="./up-hostel">Tạo phòng trọ</Link></li>
-                    <li><Link to="./posts">Tạo bài đăng</Link></li>
-                    <li><Link to="./manage-post">Quản lý bài đăng</Link></li>
-                    <li><Link to="./member">Thành viên</Link></li>
-                    <li><Link to="./pay">Thanh toán</Link></li>
-                    <li><Link to="./update-user">Cập nhật thông tin cá nhân</Link></li>
-                    <li><Link to="./up-pass">Thay đổi</Link></li>
-                </ul>
+  return (
+    <>
+      <div className="area-1200">
+        <div className="userpage-box">
+          <div className="user-fixed">
+            <div className="box-menu-user">
+              <MenuUser />
             </div>
-            <div>
-                <Outlet/>
-            </div>
-        </>
-    )
+          </div>
+
+          <div className="user-outlet" style={{width:"100%"}}>
+            <Outlet />
+          </div>
+
+          <div className="clear-box"></div>
+        </div>
+      </div>
+    </>
+  );
 }
 
 export default InfoUser;

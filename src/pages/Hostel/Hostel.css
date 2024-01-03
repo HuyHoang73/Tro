@@ -1,0 +1,146 @@
+* {
+    color:rgb(46, 46, 46);
+}
+
+.home-header {
+    background-image: url(../../image/home-bg-d.jpg);   
+    background-size: cover;
+    height: 440px;
+    width: 100%;
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 50px;
+    left: 0;
+    z-index: -1;
+}
+
+.inner-area-1200 {
+    margin-top: 70px;
+}
+
+.home-header-title {
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.hostelpage-title {
+    margin-bottom: -25px;
+}
+
+.home-section {
+    margin-bottom: 25px;
+    margin-top: 10px;
+    height: auto;
+}
+
+.hostel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.hostel-item {
+    list-style: none;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.221);
+    width: 100%;
+    height: auto;
+    background-color: rgb(240, 240, 240);
+    margin-top: 20px;
+}
+
+.hostel-item a {
+    text-decoration: none;
+}
+
+.footer-hostel-item {
+    margin-top: 5px;
+    height: 30px;
+}
+
+.hostel-item-image {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.hostel-item-image img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.hostel-item-title {
+    font-size: 15px;
+    text-align: left;
+    color: white;
+}
+
+.hostel-item-title1 {
+    font-size: 15px;
+    text-align: left;
+    color: rgb(0, 0, 0);
+}
+
+.hostel-item-address {
+    font-size: 16px;
+    text-align: left;
+    display: inline-block;
+    margin-left: 7px;
+}
+
+.hostel-item-text {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.hostel-item-price {
+    font-size: 16px;
+    color: rgb(13, 125, 125);
+    float: right;
+    font-weight: 700;
+    display: inline;
+    margin-right: 7px;
+}
+
+.info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.652);
+    padding: 7px;
+  }
+  
+.hostel-item-image:hover .info {
+    display: block;
+}
+
+.image-body {
+    width: 100%;
+}
+
+.image-body img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 1450px) {
+}
+
+@media screen and (max-width: 1200px) {
+    .hostel-item-image img {
+        width: 100%;
+    }
+}
+  

@@ -1,0 +1,140 @@
+.page-header {
+    position: static;
+    height: auto;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.main-content-title {
+    margin-top: 16px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #3c4146;
+    line-height: 27px;
+}
+
+.main-content-address {
+    margin-top: 4px;
+    font-weight: normal;
+    font-size: 18px;
+    color: #3c4146;
+    line-height: 22px;
+}
+
+.main-content-price {
+    margin-top: 4px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 150%;
+    color: #0499a8;
+}
+
+.main-content-body {
+    margin-top: 15px;
+}
+
+.main-content-body-title {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 150%;
+    color: #3c4146;
+}
+
+.list-infor {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.list-infor li {
+    width: 100%;
+    display: flex;
+    color: #657786;
+}
+
+.list-infor-title {
+    width: 150px;
+}
+
+.right-content {
+    display: block;
+    position: sticky;
+    top: 100px;
+    left: 65%;
+}
+
+.side-bar {
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #fff;
+    border-radius: 4px;
+    width: 100%;
+    float: left;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(70,80,110,.3);
+    border-radius: 12px;
+}
+
+.side-bar-header {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.215);
+}
+
+.side-bar-image {
+    margin-right: 30px;
+    border-radius: 50%;
+    margin-left: 10px;
+}
+
+.side-bar-image img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.side-bar-username {
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 700;
+}
+
+.side-bar-body-content {
+    margin-top: 20px;
+    padding: 5px;
+    text-align: center;
+    border: 2px solid #01adba;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.side-bar-body-content img {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+.text-in-button {
+    line-height: 100%;
+    margin-top: 7px;
+}
+
+.banner-detail {
+    width: 100%;
+    height: auto;
+}
+
+.banner-detail img {
+    width: 100%;
+    height: auto;
+}
+
+.clear-box {
+    clear: both;
+}

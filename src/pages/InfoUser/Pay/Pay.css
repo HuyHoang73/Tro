@@ -1,0 +1,72 @@
+.page-pay {
+    margin-left: 30px;
+}
+
+.page-pay-title {
+    text-align: center;
+}
+
+.page-pay-content {
+    margin-top: 30px;
+    padding: 30px;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.221);
+    border-radius: 7px;
+}
+
+.box-bank {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 25%;
+    height: 70px;
+    border: 1px solid rgba(0, 0, 0, 0.464);
+}
+
+.box-bank img {
+    width: 100%;
+    height: 100%;
+}
+
+.out-box-money {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.box-money {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+}
+
+.box {
+    width: 26%;
+    border: 1px solid rgba(128, 128, 128, 0.564);
+    padding: 10px;
+    text-align: center;
+    margin-top: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.box:hover {
+    background-color: rgb(196, 195, 195);
+}
+
+.radio1 {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.active {
+    border: 1px solid #00aeef;
+}
+
+.page-pay-button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+

@@ -1,0 +1,25 @@
+.user-fixed {
+    position: fixed;
+    top: 70px;
+    left: 15px;
+    float: left;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 99;
+}
+
+.box-avatar {
+    margin-bottom: 30px;
+}
+
+.box-menu-user {
+    position: relative;
+    z-index: 99;
+}
+
+/* .user-outlet {
+    position: relative;
+    z-index: 10;
+} */
+
+

@@ -1,0 +1,24 @@
+.box-identify {
+    width: 300px;
+    text-align: center;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.221);
+    border-radius: 10px;
+    padding: 10px;
+    height: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    justify-content: center;
+}
+
+.box-identify-avatar {
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.box-identify-avatar img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+

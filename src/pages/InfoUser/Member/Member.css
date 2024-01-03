@@ -1,0 +1,103 @@
+.page-member {
+    /* background-color: #00DEB6; */
+    padding: 0px 60px;
+    border-radius: 7px;
+    margin-left: 25px;
+}
+
+.page-member-title {
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.page-member-content {
+    border-radius: 7px;
+    padding: 20px 35px;
+    margin-top: 30px;
+    border: 1px solid rgba(128, 128, 128, 0.312);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.221);
+}
+
+.page-member-header {
+    font-size: 20px;
+}
+
+.page-member-line {
+    padding: 5px 0;
+}
+
+.page-member-text {
+    display: inline-block;
+    width: 250px;
+}
+
+.page-member-role {
+    display: inline-block;
+}
+
+.page-member-package {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+    margin-top: 10px;
+}
+
+.package-item {
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.221);
+    padding: 20px;
+    text-align: center;
+    border: 2px solid rgba(128, 128, 128, 0.548);
+    border-radius: 7px;
+    width: 40%;
+}
+
+.package-item p {
+    margin-bottom: 10px;
+}
+
+.package-item-1 {
+    color: #0499A8;
+}
+
+.package-item-2 {
+    color: #EB8219;
+}
+
+.page-member-button {
+    padding: 10px;
+    border-radius: 7px;
+    color: white;
+}
+
+.btn1 {
+    background-color: #00DEB6;
+    border: 1px solid #00DEB6;
+}
+
+.btn1:hover {
+    background-color: white;
+    color: #00DEB6;
+    transition: all 0.3s ease;
+}
+
+.btn2 {
+    background-color: #0499A8;
+    border: 1px solid #0499A8;
+}
+
+.btn2:hover {
+    background-color: white;
+    color: #0499A8;
+    transition: all 0.3s ease;
+}
+
+.btn3 {
+    background-color: #EB8219;
+    border: 1px solid #EB8219;
+}
+
+.btn3:hover {
+    background-color: white;
+    color: #EB8219;
+    transition: all 0.3s ease;
+}

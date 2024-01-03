@@ -1,0 +1,31 @@
+.label-pass {
+    width: 150px;
+}
+
+.pass-input {
+    padding: 3px 10px;
+    border-radius: 7px;
+    border: 1px solid rgba(128, 128, 128, 0.6);
+    width: 60%;
+}
+
+.box-pass {
+    margin-top: 5px;
+}
+
+.up-pass-button {
+    display: flex;
+    justify-content: center;
+}
+
+.setting-page {
+    margin-left: 30px;
+}
+
+.setting-page-title {
+    margin-bottom: 30px;
+}
+
+.up-password {
+    width: 80%;
+}

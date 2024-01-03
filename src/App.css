@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+button {
+  cursor: pointer;
+}
+
 .App {
   text-align: center;
 }

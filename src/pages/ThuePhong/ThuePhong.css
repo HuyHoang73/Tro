@@ -1,0 +1,30 @@
+.thuephong-title {
+    margin-top: 60px;
+    color: #00DEB6;
+    text-align: center;
+}
+
+.thuephong-title2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.submitArea {
+    display: flex;
+    justify-content: center;
+}
+
+.thuephongSubmit {
+    padding: 10px;
+    background-color: #00DEB6;
+    color: white;
+    border: 1px solid #00DEB6;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+.thuephongSubmit:hover {
+    background-color: white;
+    color: #00DEB6;
+    transition: all 0.5 ease;
+}

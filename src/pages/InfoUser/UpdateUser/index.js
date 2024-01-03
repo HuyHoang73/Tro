@@ -1,7 +1,7 @@
 function UpdateUser() {
     return(
         <>
-            UpdateUser
+            Cập nhật thông tin cá nhân
         </>
     )
 }
