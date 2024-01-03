@@ -35,9 +35,13 @@ export default function VoteHistory() {
   const handleCancel = () => {
     setIsModalOpen(false);
   };
+  //Lấy ds tro
   const fetchApi = async () => {
     const result = await getHostel();
-    setHostels(result.reverse());
+    const filteredHostels = result.filter((hostel) =>
+    user.voteList.includes(hostel.id)
+  ); 
+    setHostels(filteredHostels);
   };
   console.log(hostels)
   const fetchApi1 = async () => {
