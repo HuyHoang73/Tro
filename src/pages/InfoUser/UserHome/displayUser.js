@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { getCookie } from "../../../helpers/cookies";
 import { getHostel } from "../../../services/hostelServices";
 import "./UserHome.css";
@@ -12,19 +12,25 @@ import {
   Input,
   Form,
   Button,
-  Upload,
   Modal,
+  Upload,
 } from "antd";
-import {
-  EditOutlined, EyeOutlined,
-} from "@ant-design/icons";
+import { PlusOutlined, UserOutlined } from "@ant-design/icons";
 import swal from "sweetalert";
 
-function UpdateUser() {
+// @ts-check
+
+function DisplayUser() {
   const id = getCookie("id");
   const [data, setData] = useState({});
   const [hostel, setHostel] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  /** @type - null | File */
+  const [avatar, setAvatar] = useState(null);
+
+  const avatarPreview = useMemo(() => {
+    return avatar && URL.createObjectURL(new Blob([avatar]));
+  }, [avatar]);
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -59,50 +65,60 @@ function UpdateUser() {
   useEffect(() => {
     fetchApi();
   }, []);
+
+  const handleImageUpload = ({ file }) => {
+    if (file) setAvatar(file.originFileObj);
+  };
+
   const onFinish = (values) => {
+    // const imageList = values?.fileList?.map((file) => file.url || file.thumbUrl);
     const finalValues = {
-        name: values.name,
-        gmail: values.gmail,
-        phone: values.phone
-      };
-      const fetchApi = async () => {
-        const result = await editUser(data.id, finalValues);
-        if (result) {
-            const fetchApi = async () => {
-                const result = await getUser1(id, finalValues);
-                if (result) {
-                  setData(result);
-                }
-              };
-              fetchApi();
-          setIsModalOpen(false);
-          swal({
-            position: "top-end",
-            icon: "success",
-            title: "Đã sửa thành công",
-            showConfirmButton: false,
-            timer: 2000,
-          });
-        }
-      };
-      fetchApi();
-    console.log("Success:", values);
+      displayName: values.name,
+      gmail: values.gmail,
+      phone: values.phone,
+      avatar,
+      id: id,
+      password: "jhj",
+    };
+    const fetchApi = async () => {
+      const result = await editUser(finalValues);
+      if (result) {
+        const fetchApi = async () => {
+          const result = await getUser1(id, finalValues);
+          if (result) {
+            setData(result);
+          }
+        };
+        fetchApi();
+        setIsModalOpen(false);
+        swal({
+          position: "top-end",
+          icon: "success",
+          title: "Đã sửa thành công",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+      }
+    };
+    fetchApi();
+    console.log("Success:", finalValues);
   };
   const onFinishFailed = (errorInfo) => {
     console.log("Failed:", errorInfo);
   };
   console.log(data);
-  const totalVote = hostel.reduce((total, current) => total + current.vote, 0);
+  const normFile = (e) => {
+    if (Array.isArray(e)) {
+      return e;
+    }
+    return e?.fileList;
+  };
   return (
     <>
       {data && (
         <>
-          <button
-            className="icon-footer"
-            style={{ backgroundColor: "rgb(40, 143, 252)" }}
-            onClick={showModal}
-          >
-            <EyeOutlined />
+          <button className="btn-display" onClick={showModal}>
+            <UserOutlined />
           </button>
 
           <Modal
@@ -119,7 +135,12 @@ function UpdateUser() {
               <div className="hostel-modal-title">
                 <h2>Thông tin cá nhân</h2>
               </div>
-              <div className="hostel-modal-form">
+              <div className="hostel-modal-user">
+                <Image
+                  src={data.avatar}
+                  width={200}
+                  style={{ borderRadius: "50%" }}
+                />
                 <Form
                   name="basic"
                   layout="vertical"
@@ -198,6 +219,30 @@ function UpdateUser() {
                   </Form.Item>
 
                   <Form.Item
+                    label="Tải ảnh (Tối đa 3 ảnh)"
+                    valuePropName="fileList"
+                    getValueFromEvent={normFile}
+                  >
+                    <Upload
+                      action=""
+                      listType="picture-card"
+                      maxCount={3}
+                      onChange={handleImageUpload}
+                    >
+                      <div>
+                        <PlusOutlined />
+                        <div
+                          style={{
+                            marginTop: 8,
+                          }}
+                        >
+                          Tải ảnh (Tối đa 3 ảnh)
+                        </div>
+                      </div>
+                    </Upload>
+                  </Form.Item>
+
+                  <Form.Item
                     wrapperCol={{
                       span: 24,
                     }}
@@ -221,4 +266,4 @@ function UpdateUser() {
   );
 }
 
-export default UpdateUser;
+export default DisplayUser;

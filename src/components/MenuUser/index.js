@@ -14,6 +14,7 @@ import { getCookie } from "../../helpers/cookies";
 import { editUser, getUser1 } from "../../services/userServices";
 import swal from "sweetalert";
 import VoteHistory from "../../pages/InfoUser/UserHome/PageFavorites";
+import DisplayUser from "../../pages/InfoUser/UserHome/displayUser.js"
 
 function MenuUser() {
   const id = getCookie("id");
@@ -176,13 +177,11 @@ function MenuUser() {
                 </Link>
               </li>
               <li>
-                <Link to="./manage-hostel">
-                  <HomeOutlined />
-                </Link>
+                <DisplayUser />
               </li>
-              <li>
+              {/* <li>
                 <VoteHistory />
-              </li>
+              </li> */}
               {/* <li>
                 <Link to="./member">
                   <UsergroupAddOutlined />

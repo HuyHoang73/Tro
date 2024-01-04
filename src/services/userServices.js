@@ -15,7 +15,12 @@ export const getUser1 = async (id ="") => {
 }
 
 export const createUser = async (options) => {
-    const result = await post("user/", options);
+    const result = await post("signup/", options);
+    return result;
+}
+
+export const createUser1 = async (options) => {
+    const result = await post("signin", options);
     return result;
 }
 
@@ -49,7 +54,19 @@ export const getVerify = async () => {
     return result;
 }
 
-export const editUser = async (id, options) => {
-    const result = await patch("user/" + id, options);
+/**
+ * 
+ * @param {diff} {
+    displayName: any;
+    gmail: any;
+    phone: any;
+    avatar: any;
+    id: string;
+    password: any;
+ * } 
+ * @returns 
+ */
+export const editUser = async (diff) => {
+    const result = await post("user", diff, true);
     return result;
 }

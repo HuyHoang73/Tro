@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import {
+  createUser1,
   // checkUser,
   // getMessageLogin,
   getUser,
@@ -46,13 +47,17 @@ function Login() {
     e.preventDefault();
     const email = e.target.elements.gmail.value;
     const password = e.target.elements.password.value;
-    const response = await getUser(email, password);
-    if (response.length > 0) {
+    const option = {
+      gmail: email,
+      password: password
+    }
+    const response = await createUser1(option);
+    if (response.code === 1) {
       const time = 1;
-      setCookie("id", response[0].id, time);
-      setCookie("idrole", response[0].idrole, time);
-      setCookie("gmail", response[0].gmail, time);
-      setCookie("token", response[0].token, time);
+      setCookie("id", response.iduser, time);
+      // setCookie("idrole", response[0].idrole, time);
+      // setCookie("gmail", response[0].gmail, time);
+      setCookie("token", response.token, time);
       dispatch(authen(true));
       navigate("/");
       window.location.reload();
@@ -64,6 +69,7 @@ function Login() {
         showConfirmButton: false,
         timer: 2000,
       });
+      console.log(response)
     }
 //  const response = await getUser(email, password);
 //     if (response.length > 0) {

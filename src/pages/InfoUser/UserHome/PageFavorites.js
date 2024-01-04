@@ -38,10 +38,14 @@ export default function VoteHistory() {
   //Lấy ds tro
   const fetchApi = async () => {
     const result = await getHostel();
-    const filteredHostels = result.filter((hostel) =>
-    user.voteList.includes(hostel.id)
-  ); 
-    setHostels(filteredHostels);
+    if (user && user.voteList) {
+      const filteredHostels = result?.filter((hostel) =>
+        user.voteList.includes(hostel.id)
+      );
+      setHostels(filteredHostels);
+    } else {
+      setHostels(result); // Nếu user không có voteList, hiển thị tất cả nhà trọ
+    }
   };
   console.log(hostels)
   const fetchApi1 = async () => {

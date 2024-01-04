@@ -15,29 +15,23 @@ function Register() {
     const phone = e.target.elements.phone.value;
     const token = "jkadjasd";
 
-    const options = {
-      name: name,
-      gmail: gmail,
-      password: password,
-      phone: phone,
-      idrole: 3,
-      money: 100000,
-      token: token,
-    };
-
-    const checkExist = await getUser(gmail);
-
-    if (checkExist.length > 0) {
-      swal({
-        position: "top-end",
-        icon: "error",
-        title: "Email đã tồn tại",
-        showConfirmButton: false,
-        timer: 2000,
-      });
-    } else {
+    try {
+      const options = {
+        name: name,
+        gmail: gmail,
+        password: password,
+        phone: phone,
+      };
+  
       const result = await createUser(options);
-      if (result) {
+      if (result.code === 2) {
+        swal({
+          position: "top-end",
+          icon: "success",
+          title: "Đã đăng ký thành công",
+          showConfirmButton: false,
+          timer: 2000,
+        });
         const data = await getUser(gmail);
         const time = 1;
         setCookie("id", data.id, time);
@@ -46,8 +40,49 @@ function Register() {
         setCookie("token", token, time);
         navigate("/");
         window.location.reload();
+      } else {
+        swal({
+          position: "top-end",
+          icon: "success",
+          title: "Email đã tồn tại",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+        console.log(result)
       }
+    } catch (error) {
+      console.error("Đăng ký không thành công:", error);
+      swal({
+        title: "Đăng ký không thành công!",
+        text: "Có lỗi xảy ra khi đăng ký người dùng.",
+        icon: "error",
+        button: "OK",
+      });
     }
+
+    // const checkExist = await getUser(gmail);
+
+    // if (checkExist.length > 0) {
+    //   swal({
+    //     position: "top-end",
+    //     icon: "error",
+    //     title: "Email đã tồn tại",
+    //     showConfirmButton: false,
+    //     timer: 2000,
+    //   });
+    // } else {
+    //   const result = await createUser(options);
+    //   if (result) {
+    //     const data = await getUser(gmail);
+    //     const time = 1;
+    //     setCookie("id", data.id, time);
+    //     setCookie("idrole", 3, time);
+    //     setCookie("gmail", gmail, time);
+    //     setCookie("token", token, time);
+    //     navigate("/");
+    //     window.location.reload();
+    //   }
+    // }
   };
 
   return (
